@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kodcpm</title>
+  <title>DIY Construction Project Mangement</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -9,18 +9,16 @@
 <body>
   
   <nav class="top-bar">
-    <h1><a href="/">Kodcpm</a></h1>
-
-    <section class="top-bar-section">
-      <ul class="right">
+    <h1><a href="/">OPM Build</a></h1>
+      <center>
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <%= link_to 'My Profile', edit_user_registration_path, class: "signup-link", method: :get %> | <%= link_to 'Sign Out', destroy_user_session_path, class: "signup-link", method: :delete %>
+
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <%= link_to 'Sign Up', new_user_registration_path %> |
+          <%= link_to 'Sign In', new_user_session_path %>
         <%- end -%>
-      </ul>
-    </section>
+      </center>
   </nav>
 
   <%- flash.each do |key, value| -%>
