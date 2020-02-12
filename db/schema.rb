@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_04_172000) do
+ActiveRecord::Schema.define(version: 2020_02_12_031819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brokers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_brokers_on_property_id"
+    t.index ["user_id"], name: "index_brokers_on_user_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "date", null: false
+    t.string "address", null: false
+    t.string "listing_amount", null: false
+    t.string "listing_source", null: false
+    t.string "offer", null: false
+    t.string "zoning", null: false
+    t.string "units", null: false
+    t.string "bedrooms", null: false
+    t.string "year_built", null: false
+    t.string "sq_ft", null: false
+    t.string "tax", null: false
+    t.string "expenses", null: false
+    t.string "construction_cost", null: false
+    t.string "arv", null: false
+    t.string "realtors", null: false
+    t.string "investment_amount", null: false
+    t.string "investors", null: false
+    t.string "expected_profit", null: false
+    t.string "actual_profit", null: false
+    t.string "profits_needed", null: false
+    t.string "timeline", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
