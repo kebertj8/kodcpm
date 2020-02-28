@@ -9,15 +9,19 @@
 <body>
   
   <nav class="top-bar">
-    <h1><a href="/">OPM Build</a></h1>
+    <h1><a href="/">CPM Build</a></h1>
       <center>
         <%- if current_user -%>
         <%= link_to 'My Profile', edit_user_registration_path, class: "signup-link", method: :get %> | <%= link_to 'Sign Out', destroy_user_session_path, class: "signup-link", method: :delete %>
 
         <%- else -%>
-          <%= link_to 'Sign Up', new_user_registration_path %> |
-          <%= link_to 'Sign In', new_user_session_path %>
+        </button>
+          <strong>
+          <%= link_to 'Get Started', new_user_registration_path %> |
+        </button>
+          <%= link_to 'Log In', new_user_session_path %>
         <%- end -%>
+          </strong>
       </center>
   </nav>
 
