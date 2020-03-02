@@ -66,10 +66,10 @@ ActiveRecord::Schema.define(version: 2020_03_01_004334) do
     t.string "budget", null: false
     t.string "type", null: false
     t.string "materials", null: false
-    t.bigint "sites_id", null: false
+    t.bigint "site_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sites_id"], name: "index_stages_on_sites_id"
+    t.index ["site_id"], name: "index_stages_on_site_id"
   end
 
   create_table "subcontractors", force: :cascade do |t|
@@ -80,10 +80,10 @@ ActiveRecord::Schema.define(version: 2020_03_01_004334) do
     t.string "state", null: false
     t.string "zipcode", null: false
     t.string "country", null: false
-    t.bigint "stages_id", null: false
+    t.bigint "stage_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["stages_id"], name: "index_subcontractors_on_stages_id"
+    t.index ["stage_id"], name: "index_subcontractors_on_stage_id"
   end
 
   create_table "users", force: :cascade do |t|

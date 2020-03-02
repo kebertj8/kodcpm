@@ -4,7 +4,7 @@ class Stages < ActiveRecord::Migration[5.2]
       t.string :budget, null: false
       t.string :type, null: false
       t.string :materials, null: false
-      t.belongs_to :sites, null: false
+      t.belongs_to :site, null: false
 
       t.timestamps null: false 
     end 

@@ -8,7 +8,7 @@ class Subcontractors < ActiveRecord::Migration[5.2]
       t.string :state, null: false
       t.string :zipcode, null: false
       t.string :country, null: false
-      t.belongs_to :stages, null: false 
+      t.belongs_to :stage, null: false 
 
       t.timestamps null: false
     end
