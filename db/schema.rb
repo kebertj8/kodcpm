@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_031819) do
+ActiveRecord::Schema.define(version: 2020_03_01_004334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,42 @@ ActiveRecord::Schema.define(version: 2020_02_12_031819) do
     t.string "timeline", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sites", force: :cascade do |t|
+    t.string "street", null: false
+    t.string "state", null: false
+    t.string "country", null: false
+    t.string "zipcode", null: false
+    t.string "type", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sites_on_user_id"
+  end
+
+  create_table "stages", force: :cascade do |t|
+    t.string "budget", null: false
+    t.string "type", null: false
+    t.string "materials", null: false
+    t.bigint "site_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["site_id"], name: "index_stages_on_site_id"
+  end
+
+  create_table "subcontractors", force: :cascade do |t|
+    t.string "type", null: false
+    t.string "name", null: false
+    t.string "number", null: false
+    t.string "street", null: false
+    t.string "state", null: false
+    t.string "zipcode", null: false
+    t.string "country", null: false
+    t.bigint "stage_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stage_id"], name: "index_subcontractors_on_stage_id"
   end
 
   create_table "users", force: :cascade do |t|
