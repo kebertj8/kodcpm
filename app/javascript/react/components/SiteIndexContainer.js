@@ -1,6 +1,4 @@
-import React from 'react'
-// import SiteTile from './SiteTile'
-// import StageTile from './StageTile'
+import React from "react"
 
 const SiteIndexContainer = props => {
   return (
