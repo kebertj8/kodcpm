@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
   devise_for :users
+  root 'static_pages#index'
+  get '/projects', to: 'static_pages#index'
+  get '/stages', to: 'static_pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
