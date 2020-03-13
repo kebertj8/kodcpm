@@ -11,7 +11,7 @@ const SiteIndexContainer = props => {
         </div>
         <Link to ="/projects" className="button">Create New Project</Link><br>
         </br>
-        <Link to ="/stages" className="button">Ongoing</Link>
+        <Link to ="/stages" className="button">Schedule</Link>
       </div>
     </div>
   )
