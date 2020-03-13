@@ -2,15 +2,38 @@
   background-color: white;
   height: 10vh;
 }
-
-.site-index {
+ .head-line {
+  text-align: center;
+  background-color: rgb(239, 243, 245);
+}
+.site-index-container {
+  background: image-url("blueprint.jpg");
+  opacity: 0.9;
   background-color: rgba(241, 245, 246, 0.959);
   background-size: cover;
   height: 100vh;
   width: 100vw;
   padding-left: 10px;
   padding-right: 10px;
-  
+  .page-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    h1 {
+      font-family: "Bowlby One SC";
+      color: black;
+    }
+  } 
 }
-
-// images in css or database?
+        .button {
+          background-color: rgba(238, 74, 74, 0.918);
+         /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          width: 300px;
+        }
