@@ -37,3 +37,24 @@
           font-size: 16px;
           width: 300px;
         }
+
+        .form-style {
+          background-color: white;
+          padding-right: 20px;
+          padding-left: 20px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          margin: 10px;
+          width: 50%;
+          margin: 1px;
+          border: none;
+          border-radius: 8px;
+        }
+
+        .site-form-container {
+          background: image-url("Hero-Image-2.jpg");
+          background-size: cover;
+          opacity: 0.9;
+          height: 100vh;
+          width: 100vw;
+        }

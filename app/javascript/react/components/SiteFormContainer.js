@@ -2,17 +2,18 @@ import React, { useState }from "react"
 import { Redirect } from 'react-router-dom'
 
 
-const SiteTile = props => {
+const SiteFormContainer = props => {
+  const [shouldRedirect, setShouldRedirect] =useState(null)
+  const [errors, setErrors] = useState ({})
 
-      const [shouldRedirect, setShouldRedirect] =useState(null)
-      const [errors, setErrors] = useState ({})
-      const [newSite, setNewSite]= useState({
-        street: "",
-        state: "",
-        country: "",
-        zipCode: "",
-        type: ""
-      })
+  const [newSite, setNewSite]= useState({
+    street: "",
+    state: "",
+    country: "",
+    zipCode: "",
+    type: "",
+    userId: props.userId
+  })
 
       const validForSubmission = () => {
         let submitErrors = {}
@@ -76,56 +77,54 @@ const SiteTile = props => {
     const addNewSite = (event) => {
       event.preventDefault()
       setNewSite({
-        ...newSite,
-        [event.currentTarget.id]: event.currentTarget.value
+        ...newSite, [event.currentTarget.id]: event.currentTarget.value
       })
     }
         
     return (
-      <div>
-      <h1>New Job Site</h1>
-        <form onSubmit={formSubmit}>
-        <label>
-            Street:
-              <input type="text" name="street"
+      <div className="site-form-container">
+        <h1>New Job Site</h1>
+          <form onSubmit={formSubmit} className="form-style">
+            <label htmlFor="street">
+                Street:
+                <input type="text" id="street "name="street" placeholder="Street"
+                  onChange={addNewSite}
+                  value={newSite.street}/>
+            </label>
+
+            <label>
+                State:
+                <input type="text" id="state "name="state" placeholder="State"
+                  onChange={addNewSite}
+                  value={newSite.state}/>
+            </label>
+
+            <label>
+              Country:
+                <input type="text" name="country"
+                  onChange={addNewSite}
+                  value={newSite.country}/>
+            </label>
+
+            <label>
+              ZipCode:
+                <input type="text" id="ZipCode" name="ZipCode" placeholder="ZipCode"
+                  onChange={addNewSite}
+                  value={newSite.zipCode}/>
+            </label>
+
+            <label>
+              Type:
+            <input type="text" name="type"
               onChange={addNewSite}
-              value={newSite.street}/>
-        </label>
+              value={newSite.type}/>
+            </label>
 
-        <label>
-        State:
-        <input type="text" name="state"
-          onChange={addNewSite}
-          value={newSite.state}/>
-      </label>
-
-      <label>
-        Country:
-        <input type="text" name="country"
-          onChange={addNewSite}
-          value={newSite.country}/>
-      </label>
-
-      <label>
-        ZipCode:
-        <input type="text" name="zipCode"
-          onChange={addNewSite}
-          value={newSite.zipCode}/>
-      </label>
-
-      <label>
-        Type:
-        <input type="text" name="type"
-          onChange={addNewSite}
-          value={newSite.type}/>
-      </label>
-
-      <input type="submit" value="Submit"/>
-      <br></br>
-      </form>
+            <input className="button" type="submit" value="Create New JobSite"/>
+              <br></br>
+          </form>
       </div>
       )
-  
 }
 
-export default SiteTile
+export default SiteFormContainer
