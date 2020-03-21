@@ -87,37 +87,27 @@ const SiteFormContainer = props => {
           <form onSubmit={formSubmit} className="form-style">
             <label htmlFor="street">
                 Street:
-                <input type="text" id="street "name="street" placeholder="Street"
-                  onChange={addNewSite}
-                  value={newSite.street}/>
+                <input type="text" id="street "name="street" placeholder="Street"/>
             </label>
 
             <label>
                 State:
-                <input type="text" id="state "name="state" placeholder="State"
-                  onChange={addNewSite}
-                  value={newSite.state}/>
+                <input type="text" id="state "name="state" placeholder="State"/>
             </label>
 
             <label>
               Country:
-                <input type="text" name="country"
-                  onChange={addNewSite}
-                  value={newSite.country}/>
+                <input type="text" name="country"/>
             </label>
 
             <label>
               ZipCode:
-                <input type="text" id="ZipCode" name="ZipCode" placeholder="ZipCode"
-                  onChange={addNewSite}
-                  value={newSite.zipCode}/>
+                <input type="text" id="ZipCode" name="ZipCode" placeholder="ZipCode"/>
             </label>
 
             <label>
               Type:
-            <input type="text" name="type"
-              onChange={addNewSite}
-              value={newSite.type}/>
+            <input type="text" name="type"/>
             </label>
 
             <input className="button" type="submit" value="Create New JobSite"/>
