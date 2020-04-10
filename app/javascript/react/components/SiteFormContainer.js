@@ -1,5 +1,6 @@
 import React, { useState }from "react"
 import { Redirect } from 'react-router-dom'
+import _ from 'lodash'
 
 
 const SiteFormContainer = props => {
@@ -37,7 +38,7 @@ const SiteFormContainer = props => {
           fetch("api/v1/users", {
             credentials: "same-origin",
             method: "POST",
-            body: JSON.stringify(setNewSite),
+            body: JSON.stringify(newSite),
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"
@@ -70,6 +71,7 @@ const SiteFormContainer = props => {
 
     const formSubmit = (event) => {
     event.preventDefault
+    console.log(newSite)
     let sitePayLoad = newSite
     props.postNewSite(sitePayLoad)
   }
@@ -80,19 +82,24 @@ const SiteFormContainer = props => {
         ...newSite, [event.currentTarget.id]: event.currentTarget.value
       })
     }
-        
+
+    const onChangeHandler = (event) => {
+      event.preventDefault()
+      console.log(event.target.value)
+    } 
+        console.log(newSite)
     return (
       <div className="site-form-container">
         <h1>New Job Site</h1>
           <form onSubmit={formSubmit} className="form-style">
             <label htmlFor="street">
                 Street:
-                <input type="text" id="street "name="street" placeholder="Street"/>
+                <input type="text" id="street" name="street" placeholder="Street"/>
             </label>
 
             <label>
                 State:
-                <input type="text" id="state "name="state" placeholder="State"/>
+                <input type="text" id="state" name="state" placeholder="State"/>
             </label>
 
             <label>

@@ -13,6 +13,7 @@ class SitesController <ApplicationController
   end
   
   def create
+    # binding.pry
     @site.user = current_user
 
     if @site.save
