@@ -71,27 +71,27 @@ const SiteFormContainer = props => {
 
     const formSubmit = (event) => {
     event.preventDefault
-    console.log(newSite)
     let sitePayLoad = newSite
     props.postNewSite(sitePayLoad)
+    alert("Site has been created Successfully")
   }
 
     const addNewSite = (event) => {
-      event.preventDefault()
+      event.preventDefault
       setNewSite({
         ...newSite, [event.currentTarget.id]: event.currentTarget.value
       })
     }
 
-    const onChangeHandler = (event) => {
-      event.preventDefault()
-      console.log(event.target.value)
-    } 
-        console.log(newSite)
+    // const onChangeHandler = (event) => {
+    //   event.preventDefault()
+    //   console.log(event.target.value)
+    // } 
+
     return (
       <div className="site-form-container">
         <h1>New Job Site</h1>
-          <form onSubmit={formSubmit} className="form-style">
+          <form onSubmit={addNewSite} className="form-style">
             <label htmlFor="street">
                 Street:
                 <input type="text" id="street" name="street" placeholder="Street"/>
