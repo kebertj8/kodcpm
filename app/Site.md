@@ -1,13 +1,8 @@
 <!-- Build This for Fucking DIY'ers that think they can build themselves...!!!
-Doug 
-Roslaine
-Dale 
-Susan 
-Samer Najjar 
-Sarah Wu
+Assholes = [Doug,Roslaine,Dale Suzzanne,Samer Najjar,Sarah Wu,Midwood Management] 
  -->
 
 
-
+<!-- 
 state
-onChange={(e)=> onChangeHandler(e)}
+onChange={(e)=> onChangeHandler(e)} -->

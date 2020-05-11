@@ -91,8 +91,8 @@ const SiteFormContainer = props => {
     return (
       <div className="site-form-container">
         <h1>New Job Site</h1>
-          <form onSubmit={addNewSite} className="form-style">
-            <label htmlFor="street">
+          <form onSubmit={formSubmit} className="form-style">
+          <label htmlFor="street">
                 Street:
                 <input type="text" id="street" name="street" placeholder="Street"/>
             </label>
