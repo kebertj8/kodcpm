@@ -59,7 +59,7 @@ const SiteFormContainer = props => {
     "Åland Islands"
 ]
 
-  const types = ["New Construction", "Renovation", "Restoration", "Addition", ]
+  const types = ["New Construction", "Renovation", "Restoration", "Addition", "Repairs"]
 
       const validForSubmission = () => {
         let submitErrors = {}
@@ -150,11 +150,7 @@ const SiteFormContainer = props => {
       </option>
     )
   })
-    // const onChangeHandler = (event) => {
-    //   event.preventDefault()
-    //   console.log(event.target.value)
-    // } 
-
+  
   const onSubmitHandler = event => {
     event.preventDefault()
     if (validForSubmission()) {
@@ -169,7 +165,7 @@ const SiteFormContainer = props => {
           <form onSubmit={setNewSite} className="form-style">
           <label htmlFor="street">
                 Street:
-                <input type="text" id="street" name="street" placeholder="Street"/>
+                <input type="text" id="street" onChange={handleInputChange} name="street" placeholder="Street"/>
             </label>
 
             <label>
@@ -188,7 +184,7 @@ const SiteFormContainer = props => {
 
             <label>
               ZipCode:
-                <input type="text" id="ZipCode" name="ZipCode" placeholder="ZipCode"/>
+                <input type="text" id="ZipCode" onChange={handleInputChange} name="ZipCode" placeholder="ZipCode"/>
             </label>
 
           <label>
