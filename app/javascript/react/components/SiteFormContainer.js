@@ -83,7 +83,7 @@ const SiteFormContainer = props => {
           fetch("api/v1/users", {
             credentials: "same-origin",
             method: "POST",
-            body: JSON.stringify(newSite),
+            body: JSON.stringify(setNewSite),
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json"
