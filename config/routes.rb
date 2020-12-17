@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   get '/projects', to: 'static_pages#index'
   get '/stages', to: 'static_pages#index'
+  get '/cpm', to: 'static_pages#index'
+  get '/profits', to: 'static_pages#index'
 
   namespace :api do
     namespace :v1 do
