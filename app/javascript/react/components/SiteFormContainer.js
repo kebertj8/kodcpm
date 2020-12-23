@@ -1,6 +1,7 @@
 import React, { useState }from "react"
 import { Redirect } from 'react-router-dom'
 import _ from 'lodash'
+import { Link } from 'react-router-dom'
 
 
 const SiteFormContainer = props => {
@@ -160,7 +161,7 @@ const SiteFormContainer = props => {
   }
 
     return (
-      <div className="site-form-container">
+      <div className="site-form-container"><br/>
         <h1>New Job Site</h1>
           <form onSubmit={setNewSite} className="form-style">
           <label htmlFor="street">
@@ -197,7 +198,7 @@ const SiteFormContainer = props => {
 
             <input className="button" type="submit" value="Create New JobSite"/>
               <br></br>
-          </form>
+          </form><br/>
       </div>
       )
 }
