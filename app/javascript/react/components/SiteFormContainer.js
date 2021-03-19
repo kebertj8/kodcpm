@@ -1,13 +1,13 @@
 import React, { useState }from "react"
 import { Redirect } from 'react-router-dom'
 import _ from 'lodash'
-import { Link } from 'react-router-dom'
+import ErrorList from './ErrorList'
 
 
 const SiteFormContainer = props => {
   const [shouldRedirect, setShouldRedirect] =useState(null)
   const [errors, setErrors] = useState ({})
-
+  
   const [newSite, setNewSite]= useState({
     street: "",
     state: "",
@@ -55,7 +55,7 @@ const SiteFormContainer = props => {
     "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", 
     "Turkmenistan", "Turks and Caicos Islands (the)", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates (the)",
     "United Kingdom of Great Britain and Northern Ireland (the)", "United States Minor Outlying Islands (the)",
-    "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam",
+    "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "VietNam",
     "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe",
     "Åland Islands"
 ]
@@ -152,18 +152,24 @@ const SiteFormContainer = props => {
     )
   })
   
-  const onSubmitHandler = event => {
-    event.preventDefault()
-    if (validForSubmission()) {
-      props.onAddressSubmitted(newSite)
-      console.log(newSite)
-    }
-  }
+  // const onSubmitHandler = event => {
+  //   event.preventDefault()
+  //   if (validForSubmission()) {
+  //     props.onAddressSubmitted(newSite)
+  //   }
+  // }
+  
+  //  const formSubmit = (event) => {
+  //   event.preventDefault
+  //   let divePayLoad = newLog
+  //   props.postNewLog(divePayLoad)
+  // }
+  
 
     return (
       <div className="site-form-container"><br/>
         <h1>New Job Site</h1>
-          <form onSubmit={setNewSite} className="form-style">
+          <form onSubmit={formSubmit} className="form-style">
           <label htmlFor="street">
                 Street:
                 <input type="text" id="street" onChange={handleInputChange} name="street" placeholder="Street"/>
@@ -201,6 +207,7 @@ const SiteFormContainer = props => {
           </form><br/>
       </div>
       )
+  
 }
 
 export default SiteFormContainer

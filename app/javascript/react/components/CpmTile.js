@@ -11,7 +11,7 @@ const CpmTile = props => {
         <Link to ="/basicMaterials" className="button">Basic Material List</Link><br/>
         <Link to ="/specialMaterials" className="button">Special Material List</Link><br/>
         <Link to ="/stages" className="button">Schedule</Link><br/>
-        <Link to ="/cpm" className="button">Time-Table</Link><br/>
+        <Link to ="/cpm" className="button">Time-Alloted</Link><br/>
         <Link to ="/profits" className="button">Profit First</Link><br/>
         <Link to ="/expenses" className="button">Business Expenses</Link><br/>
         <Link to ="/contractors" className="button">Contractors</Link><br/>
